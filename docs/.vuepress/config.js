@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/somethingUI/',
     themeConfig: {
         sidebar: [
             '/',
