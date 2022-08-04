@@ -2,7 +2,7 @@
 卡片组件
 
 ### 示例
-<s-card imgSrc="/logo.png" summary="Vue" />
+<s-card imgSrc="/something-ui/logo.png" summary="Vue" />
 
 ### 代码
 ```html
