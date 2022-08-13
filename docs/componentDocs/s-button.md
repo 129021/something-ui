@@ -1,12 +1,18 @@
-# Card
-卡片组件
+# Button
+按钮组件
 
 ### 示例
-<s-card imgSrc="/something-ui/logo.png" summary="Vue" />
+ <Button type="primary"  ></Button>
+    <Button type="success"  ></Button>
+    <Button type="warning"  ></Button>
+    <Button type="danger"  ></Button>
 
 ### 代码
 ```html
-<s-card imgSrc="/logo.png" summary="Vue" />
+    <Button type="primary"  ></Button>
+    <Button type="success"  ></Button>
+    <Button type="warning"  ></Button>
+    <Button type="danger"  ></Button>
 ```
 
 ### Attributes
@@ -17,7 +23,3 @@
 | imgHeight | 图片高度 | Number | false | - |
 | summary | 卡片概要 | String/Slot | false | - |
 | footer | 卡片底部 | Slot | false | - |
-
-
-
-

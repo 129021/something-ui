@@ -1,9 +1,15 @@
 import Demo from './demo'
 import Card from './card'
+import Button from './button'
+import Icon from './icon'
+import Input from './input'
 
 const components = {
     Demo,
     Card,
+    Button,
+    Icon,
+    Input,
 }
 
 const install = function ( Vue ) { 

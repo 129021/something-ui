@@ -1,31 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" />
     <Demo></Demo>
     <Card
-    imgSrc="react.png"
-    summary="summary test test test"
-    :width="370"
-    :imgHeight="100"
+      imgSrc="react.png"
+      summary="summary test test test"
+      :width="370"
+      :imgHeight="100"
     >
-    <template v-slot:footer>
-      <div class="footer">
-        <div class="level">level test</div>
-        <div class="price">$199.00</div>
-      </div>
-      
-    </template>
+      <template v-slot:footer>
+        <div class="footer">
+          <div class="level">level test</div>
+          <div class="price">$199.00</div>
+        </div>
+      </template>
     </Card>
-   
+    <Button type="primary" disabled round icon="danger"></Button>
+    <Button type="danger" round @click="handleClick"></Button>
+
+    <Icon name="info"></Icon>
+    <Input placeholder="please input the password" clearable  :value="msg" @input="(data)=>msg=data"></Input>
+
+    <h1>{{msg}}</h1>
+    <!-- <input clearable> -->
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-
-}
+  name: "App",
+  methods: {
+    handleClick() {
+      alert(123);
+    },
+  },
+  data() {
+    return {
+      msg: "Hello,World",
+    };
+  },
+};
 </script>
 
 <style>
@@ -38,33 +52,32 @@ export default {
   margin-top: 60px;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: space-between;
-
 }
 
-.level{
+.level {
   /* display: flex; */
 
   /* flex:1; */
-  
+
   font-size: 14px;
   color: red;
-  padding-left:10px ;
+  padding-left: 10px;
   /* justify-content: space-between; */
   /* text-align: left; */
   /* padding-left: 10px; */
 }
 
-.price{
+.price {
   /* display: flex; */
   /* flex:1; */
   font-size: 14px;
   color: red;
   padding-right: 10px;
   /* justify-content: space-between; */
-  
+
   /* text-align: right; */
   /* padding-left: 10px; */
 }
