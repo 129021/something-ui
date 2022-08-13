@@ -3,24 +3,35 @@
     <template v-if="type === 'textarea'">
       <textarea
         class="s-textarea"
+        :disabled="disabled"
         v-bind="$attrs"
         v-on="myListeners"
         v-model="inputValue"
       ></textarea>
     </template>
     <template v-else>
-      <div class="s-input-outer">
-        <input
-          type="text"
-          class="s-input"
-          :class="styleClass"
-          v-bind="$attrs"
-          v-on="myListeners"
-          v-model="inputValue"
-        />
-        <span class="s-input-clear" @click="clearText" v-if="showClear">
-          <Icon name="clear"></Icon>
-        </span>
+      <div class="inline-container" :class="className">
+        <div class="s-input-prepend" v-if="$slots.prepend">
+          <slot name="prepend"></slot>
+        </div>
+        <div class="s-input-outer">
+          <input
+            type="text"
+            class="s-input"
+            :class="styleClass"
+            :disabled="disabled"
+            v-bind="$attrs"
+            v-on="myListeners"
+            v-model="inputValue"
+          />
+          <span class="s-input-clear" @click="clearText" v-if="showClear">
+            <Icon name="clear"></Icon>
+          </span>
+        </div>
+
+        <div class="s-input-append" v-if="$slots.append">
+          <slot name="append"></slot>
+        </div>
       </div>
     </template>
   </div>
@@ -53,6 +64,16 @@ export default {
       type: Boolean,
       default: false,
     },
+
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+
+    center: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {},
   computed: {
@@ -77,11 +98,20 @@ export default {
     styleClass() {
       return {
         [`s-input--${this.size}`]: this.size,
+        "is-disabled": this.disabled,
+        "is-center": this.center,
       };
     },
 
     showClear() {
-      return this.clearable && this.inputValue!== "";
+      return this.clearable && this.inputValue !== "";
+    },
+
+    className() {
+      return {
+        "has-prepend": this.$slots.prepend,
+        "has-append": this.$slots.append,
+      };
     },
   },
   methods: {

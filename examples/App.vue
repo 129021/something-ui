@@ -19,9 +19,22 @@
     <Button type="danger" round @click="handleClick"></Button>
 
     <Icon name="info"></Icon>
-    <Input placeholder="please input the password" clearable  :value="msg" @input="(data)=>msg=data"></Input>
 
-    <h1>{{msg}}</h1>
+    <div class="input-warpper">
+      <Input
+        placeholder="please input the password"
+        clearable
+        center
+        :value="msg"
+        @input="(data) => (msg = data)"
+      >
+        <template slot="prepend">https:// </template>
+        <template slot="append">.com </template>
+        </Input
+      >
+    </div>
+
+    <h1>{{ msg }}</h1>
     <!-- <input clearable> -->
   </div>
 </template>
@@ -80,5 +93,10 @@ export default {
 
   /* text-align: right; */
   /* padding-left: 10px; */
+}
+
+.input-warpper {
+  width: 480px;
+  margin: 100px auto;
 }
 </style>
