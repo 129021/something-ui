@@ -72,9 +72,12 @@ export default {
         this.$emit("input", _value);
       },
     },
-    decreaseDisabled(){
-        return this
-    }
+    decreaseDisabled() {
+      return this.disabled || this.inputValue <= this.min;
+    },
+    increaseDisabled() {
+      return this.disabled || this.inputValue >= this.max;
+    },
   },
 
   methods: {
