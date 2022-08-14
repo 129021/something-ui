@@ -25,17 +25,21 @@
         placeholder="please input the password"
         clearable
         center
+        medium
         :value="msg"
         @input="(data) => (msg = data)"
       >
         <template slot="prepend">https:// </template>
         <template slot="append">.com </template>
-        </Input
-      >
+      </Input>
     </div>
 
     <h1>{{ msg }}</h1>
     <!-- <input clearable> -->
+
+    <div class="input-warpper">
+      <InputNumber v-model="count" :step="3" :max="10" :min="1"></InputNumber>
+    </div>
   </div>
 </template>
 
@@ -50,6 +54,7 @@ export default {
   data() {
     return {
       msg: "Hello,World",
+      count: 5,
     };
   },
 };

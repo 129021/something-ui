@@ -14,11 +14,15 @@ import Icon from '../components/lib/icon/index'
 
 import Input from '../components/lib/input/index'
 
+
+import InputNumber from '../components/lib/input-number/index'
+
 Vue.use(Demo)
 Vue.use(Card)
 Vue.use(Button)
 Vue.use(Icon)
 Vue.use(Input)
+Vue.use(InputNumber)
 
 
 

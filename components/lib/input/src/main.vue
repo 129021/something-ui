@@ -56,7 +56,7 @@ export default {
       type: String,
       default: "",
       validator: (value) => {
-        return ["medium", "small", "default"].includes(value);
+        return ["","medium", "small"].includes(value);
       },
     },
 

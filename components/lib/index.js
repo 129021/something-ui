@@ -3,6 +3,7 @@ import Card from './card'
 import Button from './button'
 import Icon from './icon'
 import Input from './input'
+import InputNumber from './input-number'
 
 const components = {
     Demo,
@@ -10,6 +11,7 @@ const components = {
     Button,
     Icon,
     Input,
+    InputNumber,
 }
 
 const install = function ( Vue ) { 
