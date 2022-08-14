@@ -3,6 +3,7 @@
     <Input v-model="inputValue" center>
       <div
         class="cursor-pointer"
+        :class="{ 'is-disabled': decreaseDisabled }"
         slot="prepend"
         @click="handleClick('decrease')"
       >
@@ -10,6 +11,7 @@
       </div>
       <div
         class="cursor-pointer"
+        :class="{ 'is-disabled': increaseDisabled }"
         slot="append"
         @click="handleClick('increase')"
       >
@@ -49,10 +51,30 @@ export default {
       get() {
         return this.value;
       },
-      set(value) {
-        this.$emit("input", value);
+      set(newValue) {
+        let { max, min } = this;
+        let limit = [
+          {
+            validate: (value) => value >= this.max,
+            res: max,
+          },
+          {
+            validate: (value) => value <= this.mim,
+            res: min,
+          },
+          {
+            validate: (value) => true,
+            res: newValue * 1,
+          },
+        ];
+
+        let _value = limit.find((v) => v.validate(newValue)).res;
+        this.$emit("input", _value);
       },
     },
+    decreaseDisabled(){
+        return this
+    }
   },
 
   methods: {
