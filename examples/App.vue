@@ -56,6 +56,12 @@
     <CheckBox v-model="hobby" label="basketball"></CheckBox>
     <CheckBox v-model="hobby" label="football"></CheckBox>
     <CheckBox v-model="hobby" label="pingpang"></CheckBox>
+
+    <CheckBoxGroup v-model="animals">
+      <CheckBox label="aa"></CheckBox>
+      <CheckBox label="fol"></CheckBox>
+      <CheckBox label="ping"></CheckBox>
+    </CheckBoxGroup>
   </div>
 </template>
 
@@ -74,7 +80,8 @@ export default {
       sex: "male",
       group_sex: "female",
       checked: true,
-      hobby: ['football'],
+      hobby: ["football"],
+      animals: ['aa'],
     };
   },
 };

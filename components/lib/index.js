@@ -7,6 +7,8 @@ import InputNumber from './input-number'
 import Radio from './radio'
 import RadioGroup from './radio-group'
 import CheckBox from './checkbox'
+import CheckBoxGroup from './checkbox-group'
+import Message from './message'
 
 const components = {
     Demo,
@@ -18,6 +20,8 @@ const components = {
     Radio,
     RadioGroup,
     CheckBox,
+    CheckBoxGroup,
+    Message,
 
 }
 

@@ -22,6 +22,8 @@ import Radio from '../components/lib/radio/index'
 import RadioGroup from '../components/lib/radio-group/index'
 
 import CheckBox from '../components/lib/checkbox/index'
+
+import CheckBoxGroup from '../components/lib/checkbox-group/index'
 Vue.use(Demo)
 Vue.use(Card)
 Vue.use(Button)
@@ -31,6 +33,7 @@ Vue.use(InputNumber)
 Vue.use(Radio)
 Vue.use(RadioGroup)
 Vue.use(CheckBox)
+Vue.use(CheckBoxGroup)
 
 
 
