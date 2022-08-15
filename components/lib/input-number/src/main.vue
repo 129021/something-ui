@@ -1,6 +1,6 @@
 <template>
   <div class="input-number-inner">
-    <Input v-model="inputValue" center>
+    <Input v-model="inputValue" center @change="handleChange">
       <div
         class="cursor-pointer"
         :class="{ 'is-disabled': decreaseDisabled }"
@@ -26,7 +26,7 @@ export default {
   name: "InputNumber",
   props: {
     value: {
-      type: Number,
+      type: [Number, String],
     },
     step: {
       type: Number,
@@ -40,6 +40,9 @@ export default {
       type: Number,
       default: -Infinity,
     },
+    precision: {
+      type: Number,
+    },
   },
   data() {
     return {
@@ -52,14 +55,18 @@ export default {
         return this.value;
       },
       set(newValue) {
-        let { max, min } = this;
+        let { max, min, inputValue } = this;
         let limit = [
+          {
+            validate: (value) => !this.isNumber(value),
+            res: inputValue,
+          },
           {
             validate: (value) => value >= this.max,
             res: max,
           },
           {
-            validate: (value) => value <= this.mim,
+            validate: (value) => value <= this.min,
             res: min,
           },
           {
@@ -69,7 +76,7 @@ export default {
         ];
 
         let _value = limit.find((v) => v.validate(newValue)).res;
-        this.$emit("input", _value);
+        this.$emit("input", _value.toFixed(this.precision));
       },
     },
     decreaseDisabled() {
@@ -83,10 +90,21 @@ export default {
   methods: {
     handleClick(type) {
       if (type == "increase") {
-        this.inputValue += this.step;
+        if (this.increaseDisabled) return;
+        this.inputValue = Number(this.inputValue) + this.step;
       } else {
-        this.inputValue -= this.step;
+        if (this.decreaseDisabled) return;
+        this.inputValue = Number(this.inputValue) - this.step;
       }
+    },
+    isNumber(num) {
+      return (
+        !isNaN(num * 1) &&
+        Object.prototype.toString.call(num * 1) === "[object Number]"
+      );
+    },
+    handleChange() {
+      this.$forceUpdate();
     },
   },
 };

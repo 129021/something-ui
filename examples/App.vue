@@ -38,8 +38,24 @@
     <!-- <input clearable> -->
 
     <div class="input-warpper">
-      <InputNumber v-model="count" :step="3" :max="10" :min="1"></InputNumber>
+      <InputNumber v-model="count" :step="1" :max="10" :min="1"></InputNumber>
     </div>
+
+    <Radio v-model="sex" label="male"></Radio>
+    <Radio v-model="sex" label="female"></Radio>
+
+    <RadioGroup v-model="group_sex">
+      <Radio label="male"></Radio>
+      <Radio label="female"></Radio>
+    </RadioGroup>
+    <h1>{{ group_sex }}</h1>
+
+    <CheckBox v-model="checked" label="basketball"></CheckBox>
+    <p>是否选中：{{ checked ? "选中" : "未选中" }}</p>
+
+    <CheckBox v-model="hobby" label="basketball"></CheckBox>
+    <CheckBox v-model="hobby" label="football"></CheckBox>
+    <CheckBox v-model="hobby" label="pingpang"></CheckBox>
   </div>
 </template>
 
@@ -55,6 +71,10 @@ export default {
     return {
       msg: "Hello,World",
       count: 5,
+      sex: "male",
+      group_sex: "female",
+      checked: true,
+      hobby: ['football'],
     };
   },
 };
