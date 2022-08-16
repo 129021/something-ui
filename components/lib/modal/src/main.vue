@@ -6,20 +6,32 @@
     >
     </transition>
     <div class="modal-content" v-if="visible">
-      <TempComponent @close="close"> </TempComponent>
+      <TempComponent
+        @close="close"
+        :params="params"
+        @success="successCallback"
+        @fail="failCallback"
+      >
+      </TempComponent>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: " Modal",
+  name: "Modal",
   data() {
     return {
       visible: false,
     };
   },
 
+  props: {
+    template: null,
+    params: Object,
+    success: Function,
+    fail: Function,
+  },
   components: {
     TempComponent: null,
   },
@@ -40,6 +52,16 @@ export default {
 
     destoryElement() {
       this.$destroy();
+    },
+
+    successCallback(data) {
+      this.success(data);
+      this.close();
+    },
+
+    failCallback(data) {
+      this.fail(data);
+      this.close();
     },
   },
 

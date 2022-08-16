@@ -71,6 +71,9 @@
 
     <!-- modal  -->
     <Button type="primary" @click="showModal">showModal</Button>
+
+    <!-- toast -->
+    <Button type="primary" @click="showToast">toast</Button>
   </div>
 </template>
 
@@ -78,10 +81,29 @@
 import Hello from "./hello.vue";
 export default {
   name: "App",
+
   methods: {
+    showToast() {
+      this.$toast({
+        message: "hello world",
+        duration: 3000,
+        onClose: () => {
+          alert("close");
+        },
+      });
+    },
     showModal() {
       this.$modal({
         template: Hello,
+        params: {
+          name: "我是外部传过来的参数",
+        },
+        success: (data) => {
+          console.log(data);
+        },
+        fail: (data) => {
+          console.log(data);
+        },
       });
     },
     showMessageBox() {
