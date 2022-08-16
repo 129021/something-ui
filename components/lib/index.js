@@ -9,6 +9,7 @@ import RadioGroup from './radio-group'
 import CheckBox from './checkbox'
 import CheckBoxGroup from './checkbox-group'
 import Message from './message'
+import MessageBox from './message-box'
 
 const components = {
     Demo,
@@ -22,6 +23,7 @@ const components = {
     CheckBox,
     CheckBoxGroup,
     Message,
+    MessageBox
 
 }
 

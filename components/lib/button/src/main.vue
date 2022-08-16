@@ -6,7 +6,7 @@
     @click="handleClick"
   >
     <span v-if="icon"> <Icon></Icon></span>
-    Button
+    <slot></slot>
   </button>
 </template>
 
@@ -18,7 +18,7 @@ export default {
       type: String,
       default: "",
       validator: (value) => {
-        return ["primary", "success", "warning", "danger"].includes(value);
+        return ["", "primary", "success", "warning", "danger"].includes(value);
       },
     },
     disabled: {

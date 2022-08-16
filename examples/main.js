@@ -24,6 +24,12 @@ import RadioGroup from '../components/lib/radio-group/index'
 import CheckBox from '../components/lib/checkbox/index'
 
 import CheckBoxGroup from '../components/lib/checkbox-group/index'
+
+import Message from '../components/lib/message/index'
+
+import MessageBox from '../components/lib/message-box/index'
+
+import Modal from '../components/lib/modal/index'
 Vue.use(Demo)
 Vue.use(Card)
 Vue.use(Button)
@@ -34,7 +40,9 @@ Vue.use(Radio)
 Vue.use(RadioGroup)
 Vue.use(CheckBox)
 Vue.use(CheckBoxGroup)
-
+Vue.use(Message)
+Vue.use(MessageBox)
+Vue.use(Modal)
 
 
 

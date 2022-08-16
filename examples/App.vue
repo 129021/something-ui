@@ -62,15 +62,62 @@
       <CheckBox label="fol"></CheckBox>
       <CheckBox label="ping"></CheckBox>
     </CheckBoxGroup>
+
+    <Button type="danger" @click="showMessage">click me</Button>
+    <Button type="warning" @click="showMessage1">click me</Button>
+
+    <!-- messagebox  -->
+    <Button type="primary" @click="showMessageBox">messagebox</Button>
+
+    <!-- modal  -->
+    <Button type="primary" @click="showModal">showModal</Button>
   </div>
 </template>
 
 <script>
+import Hello from "./hello.vue";
 export default {
   name: "App",
   methods: {
+    showModal() {
+      this.$modal({
+        template: Hello,
+      });
+    },
+    showMessageBox() {
+      this.$alert({
+        title: "我是标题",
+        content: "我是内容",
+        onOK: () => {
+          alert("OK");
+        },
+        onCancel: () => {
+          alert("cancel");
+        },
+      });
+    },
     handleClick() {
       alert(123);
+    },
+
+    showMessage() {
+      this.$message({
+        message: "我是一个message消息",
+        duration: 3000,
+        autoClose: false,
+        position: "right",
+        type: "warning",
+      });
+    },
+
+    showMessage1() {
+      this.$message({
+        message: "我是一个message消息1",
+        duration: 3000,
+        autoClose: false,
+        position: "center",
+        type: "info",
+      });
     },
   },
   data() {
@@ -81,7 +128,7 @@ export default {
       group_sex: "female",
       checked: true,
       hobby: ["football"],
-      animals: ['aa'],
+      animals: ["aa"],
     };
   },
 };
