@@ -32,6 +32,8 @@ import MessageBox from '../components/lib/message-box/index'
 import Modal from '../components/lib/modal/index'
 
 import Toast from '../components/lib/toast/index'
+
+import Uploader from '../components/lib/uploader/index'
 Vue.use(Demo)
 Vue.use(Card)
 Vue.use(Button)
@@ -46,7 +48,7 @@ Vue.use(Message)
 Vue.use(MessageBox)
 Vue.use(Modal)
 Vue.use(Toast)
-
+Vue.use(Uploader)
 
 
 Vue.config.productionTip = false

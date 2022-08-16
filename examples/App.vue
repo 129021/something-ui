@@ -74,6 +74,23 @@
 
     <!-- toast -->
     <Button type="primary" @click="showToast">toast</Button>
+
+    <!-- uploader  -->
+
+    <Uploader
+      accept="image/png, image/jpeg"
+      :size="150 * 1024"
+      :on-success="uploadSuccess"
+      :on-error="uploadError"
+    >
+      <div class="uploader-area" slot="uploader-area">
+        <Icon name="increase"></Icon>
+        <div class="s-uploader--text">将文件拖到此处，或<em>点击上传</em></div>
+      </div>
+      <div class="s-uploader--tip" slot="tip">
+        只能上传jpg/png文件，且不超过500kb
+      </div>
+    </Uploader>
   </div>
 </template>
 
@@ -83,6 +100,12 @@ export default {
   name: "App",
 
   methods: {
+    uploadSuccess() {},
+    uploadError(msg) {
+      this.$message({
+        message: msg,
+      });
+    },
     showToast() {
       this.$toast({
         message: "hello world",

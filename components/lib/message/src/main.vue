@@ -10,7 +10,7 @@
         <span v-if="type">
           <Icon :name="getIconName"></Icon>
         </span>
-        我是一个message消息
+        {{ message }}
         <span class="close-btn" @click="closeMessage">
           <Icon name="clear"></Icon>
         </span>
@@ -23,6 +23,9 @@
 export default {
   name: "Message",
   props: {
+    message: {
+      type: String,
+    },
     duration: {
       type: Number,
       default: 3000,
@@ -79,7 +82,7 @@ export default {
   },
   computed: {
     getIconName() {
-        // TODO:success的icon不太对，增加一个带圆圈的success图标
+      // TODO:success的icon不太对，增加一个带圆圈的success图标
       const ICONS = {
         success: "success",
         error: "clear",
