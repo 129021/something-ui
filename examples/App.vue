@@ -79,9 +79,11 @@
 
     <Uploader
       accept="image/png, image/jpeg"
-      :size="150 * 1024"
+      :size="500 * 1024"
       :on-success="uploadSuccess"
       :on-error="uploadError"
+      :limit="3"
+      :multiple="true"
     >
       <div class="uploader-area" slot="uploader-area">
         <Icon name="increase"></Icon>
