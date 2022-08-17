@@ -83,6 +83,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../../../css/messagebox.scss";
+<style >
+
 </style>

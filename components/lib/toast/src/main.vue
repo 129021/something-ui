@@ -70,6 +70,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../../../css/toast.scss";
+<style >
+
 </style>

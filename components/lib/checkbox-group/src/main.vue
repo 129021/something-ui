@@ -18,6 +18,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../../../css/checkbox.scss";
+<style >
+
 </style>

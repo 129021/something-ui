@@ -53,5 +53,5 @@ export default {
 </script>   
 
 <style>
-@import "../../../css/button.scss";
+/* @import "../../../css/button.scss"; */
 </style>

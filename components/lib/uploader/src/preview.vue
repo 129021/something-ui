@@ -4,6 +4,7 @@
     :style="computedStyle"
   >
     <img
+    class="img-container"
       :src="params.url"
       ref="previewImage"
       @load="loadImage"
@@ -44,19 +45,6 @@ export default {
 };
 </script>
 
-<style scoped>
-img {
-  width: 80%;
-  max-width: 100%;
-}
-.preview-container {
-  position: relative;
-}
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 20px;
-}
+<style >
+
 </style>

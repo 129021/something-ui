@@ -135,6 +135,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "../../../css/message.scss";
+<style >
+
 </style>
