@@ -4,8 +4,8 @@
       <ul class="preview-images-list">
         <li v-for="(file, index) in previewImages" :key="index">
           <span class="preview-delete-icon">
-            <Icon name="viewlarger" @click="previewImage(index)"></Icon>
-            <Icon name="delete" @click="deleteImage(index)"></Icon>
+            <s-icon name="viewlarger" @click="previewImage(index)"></s-icon>
+            <s-icon name="delete" @click="deleteImage(index)"></s-icon>
           </span>
           <img :src="file.url" alt="" />
         </li>
@@ -37,7 +37,7 @@
 <script>
 import Preview from "./preview.vue";
 export default {
-  name: "Uploader",
+  name: "s-uploader",
   props: {
     accept: {
       type: String,

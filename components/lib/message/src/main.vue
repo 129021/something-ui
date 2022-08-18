@@ -8,11 +8,11 @@
     >
       <div class="s-message__content">
         <span v-if="type">
-          <Icon :name="getIconName"></Icon>
+          <s-icon :name="getIconName"></s-icon>
         </span>
         {{ message }}
         <span class="close-btn" @click="closeMessage">
-          <Icon name="clear"></Icon>
+          <s-icon name="clear"></s-icon>
         </span>
       </div>
     </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "Message",
+  name: "s-message",
   props: {
     message: {
       type: String,

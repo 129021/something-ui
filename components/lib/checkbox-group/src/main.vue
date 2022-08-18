@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "CheckBoxGroup",
+  name: "s-checkboxgroup",
   props: {
     value: {
       type: Array,

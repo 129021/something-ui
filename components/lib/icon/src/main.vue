@@ -7,7 +7,7 @@
 <script>
 import "../assets/iconfont";
 export default {
-  name: "Icon",
+  name: "s-icon",
   props: {
     name: {
       type: String,

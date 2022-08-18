@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: "Hello",
   props: {
     params: Object,
   },

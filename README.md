@@ -9,8 +9,8 @@ npm i something-ui
 ```javascript
 //全部引用
 import "something-ui/dist/css/index.css";
-import SUI from 'something-ui',
-Vue.use(SUI);
+import sui from 'something-ui';
+Vue.use(sui);
 
 //按需引用
 import 'something-ui/dist/css/demo.css';

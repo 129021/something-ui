@@ -63,6 +63,11 @@ Vue.use(Toast)
 Vue.use(Uploader)
 
 
+// import "something-ui/dist/css/index.css";
+// import SUI from 'something-ui'
+// Vue.use(SUI);
+
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -6,12 +6,12 @@
         <div class="s-message-box__content">{{ content }}</div>
         <div class="s-message-box__footer">
           <template v-if="type === 'confirm'">
-            <Button size="small" @click="cancelHandle">取消</Button></template
+            <s-button size="small" @click="cancelHandle">取消</s-button></template
           >
 
-          <Button type="primary" size="small" @click="confirmHandle">
+          <s-button type="primary" size="small" @click="confirmHandle">
             确定
-          </Button>
+          </s-button>
         </div>
       </div>
     </transition>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "MessageBox",
+  name: "s-messagebox",
   props: {
     title: {
       type: String,

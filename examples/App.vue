@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <Demo></Demo>
-    <Card
+    <s-demo></s-demo>
+    <s-card
       imgSrc="react.png"
       summary="summary test test test"
       :width="370"
@@ -14,14 +14,15 @@
           <div class="price">$199.00</div>
         </div>
       </template>
-    </Card>
-    <Button type="primary" disabled round icon="danger"></Button>
-    <Button type="danger" round @click="handleClick"></Button>
+    </s-card>
+    <s-button type="primary" disabled round icon="danger"></s-button>
+    <s-button type="danger" round @click="handleClick"></s-button>
+    <s-button type="danger" >Hello</s-button>
 
-    <Icon name="info"></Icon>
+    <s-icon name="info"></s-icon>
 
     <div class="input-warpper">
-      <Input
+      <s-input
         placeholder="please input the password"
         clearable
         center
@@ -31,53 +32,53 @@
       >
         <template slot="prepend">https:// </template>
         <template slot="append">.com </template>
-      </Input>
+      </s-input>
     </div>
 
     <h1>{{ msg }}</h1>
     <!-- <input clearable> -->
 
     <div class="input-warpper">
-      <InputNumber v-model="count" :step="1" :max="10" :min="1"></InputNumber>
+      <s-inputnumber v-model="count" :step="1" :max="10" :min="1"></s-inputnumber>
     </div>
 
-    <Radio v-model="sex" label="male"></Radio>
-    <Radio v-model="sex" label="female"></Radio>
+    <s-radio v-model="sex" label="male"></s-radio>
+    <s-radio v-model="sex" label="female"></s-radio>
 
-    <RadioGroup v-model="group_sex">
-      <Radio label="male"></Radio>
-      <Radio label="female"></Radio>
-    </RadioGroup>
+    <s-radiogroup v-model="group_sex">
+      <s-radio label="male"></s-radio>
+      <s-radio label="female"></s-radio>
+    </s-radiogroup>
     <h1>{{ group_sex }}</h1>
 
-    <CheckBox v-model="checked" label="basketball"></CheckBox>
+    <s-checkbox v-model="checked" label="basketball"></s-checkbox>
     <p>是否选中：{{ checked ? "选中" : "未选中" }}</p>
 
-    <CheckBox v-model="hobby" label="basketball"></CheckBox>
-    <CheckBox v-model="hobby" label="football"></CheckBox>
-    <CheckBox v-model="hobby" label="pingpang"></CheckBox>
+    <s-checkbox v-model="hobby" label="basketball"></s-checkbox>
+    <s-checkbox v-model="hobby" label="football"></s-checkbox>
+    <s-checkbox v-model="hobby" label="pingpang"></s-checkbox>
 
-    <CheckBoxGroup v-model="animals">
-      <CheckBox label="aa"></CheckBox>
-      <CheckBox label="fol"></CheckBox>
-      <CheckBox label="ping"></CheckBox>
-    </CheckBoxGroup>
+    <s-checkboxgroup v-model="animals">
+      <s-checkbox label="aa"></s-checkbox>
+      <s-checkbox label="fol"></s-checkbox>
+      <s-checkbox label="ping"></s-checkbox>
+    </s-checkboxgroup>
 
-    <Button type="danger" @click="showMessage">click me</Button>
-    <Button type="warning" @click="showMessage1">click me</Button>
+    <s-button type="danger" @click="showMessage">click me</s-button>
+    <s-button type="warning" @click="showMessage1">click me</s-button>
 
     <!-- messagebox  -->
-    <Button type="primary" @click="showMessageBox">messagebox</Button>
+    <s-button type="primary" @click="showMessageBox">messagebox</s-button>
 
     <!-- modal  -->
-    <Button type="primary" @click="showModal">showModal</Button>
+    <s-button type="primary" @click="showModal">showModal</s-button>
 
     <!-- toast -->
-    <Button type="primary" @click="showToast">toast</Button>
+    <s-button type="primary" @click="showToast">toast</s-button>
 
     <!-- uploader  -->
 
-    <Uploader
+    <s-uploader
       accept="image/png, image/jpeg"
       :size="500 * 1024"
       :on-success="uploadSuccess"
@@ -86,13 +87,16 @@
       :multiple="true"
     >
       <div class="uploader-area" slot="uploader-area">
-        <Icon name="increase"></Icon>
+        <s-icon name="increase"></s-icon>
         <div class="s-uploader--text">将文件拖到此处，或<em>点击上传</em></div>
       </div>
       <div class="s-uploader--tip" slot="tip">
         只能上传jpg/png文件，且不超过500kb
       </div>
-    </Uploader>
+    </s-uploader>
+
+
+    <s-button>hello</s-button>
   </div>
 </template>
 

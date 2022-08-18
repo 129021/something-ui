@@ -10,8 +10,11 @@ import CheckBox from './checkbox'
 import CheckBoxGroup from './checkbox-group'
 import Message from './message'
 import MessageBox from './message-box'
+import Modal from './modal'
+import Toast from './toast'
+import Uploader from './uploader'
 
-const components = {
+const componentsList = [
     Demo,
     Card,
     Button,
@@ -23,20 +26,44 @@ const components = {
     CheckBox,
     CheckBoxGroup,
     Message,
-    MessageBox
+    MessageBox,
+    Modal,
+    Toast,
+    Uploader
 
-}
+]
 
 const install = function (Vue) {
     if (install.installed) return;
 
-    Object.keys(components).forEach(key => {
-        Vue.component(components[key].name, components[key]);
-    });
+    // Object.keys(components).forEach(key => {
+    //     Vue.component(components[key].name, components[key]);
+    // });
+    componentsList.map((component) => {
+        Vue.use(component)
+    })
 }
 
-const API = {
-    install,
-};
+// const API = {
 
-export default API;
+// };
+
+export default {
+    install,
+    Demo,
+    Card,
+    Button,
+    Icon,
+    Input,
+    InputNumber,
+    Radio,
+    RadioGroup,
+    CheckBox,
+    CheckBoxGroup,
+    Message,
+    MessageBox,
+    Modal,
+    Toast,
+    Uploader
+
+};

@@ -25,7 +25,7 @@
             v-model="inputValue"
           />
           <span class="s-input-clear" @click="clearText" v-if="showClear">
-            <Icon name="clear"></Icon>
+            <s-icon name="clear"></s-icon>
           </span>
         </div>
 
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "Input",
+  name: "s-input",
   props: {
     value: {
       type: [String, Number],

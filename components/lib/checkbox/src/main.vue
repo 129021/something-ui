@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "CheckBox",
+  name: "s-checkbox",
   inject: {
     CKGroup: {
       default: "",

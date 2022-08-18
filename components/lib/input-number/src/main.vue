@@ -1,13 +1,13 @@
 <template>
   <div class="input-number-inner">
-    <Input v-model="inputValue" center @change="handleChange">
+    <s-input v-model="inputValue" center @change="handleChange">
       <div
         class="cursor-pointer"
         :class="{ 'is-disabled': decreaseDisabled }"
         slot="prepend"
         @click="handleClick('decrease')"
       >
-        <Icon name="Decrease"></Icon>
+        <s-icon name="Decrease"></s-icon>
       </div>
       <div
         class="cursor-pointer"
@@ -15,15 +15,15 @@
         slot="append"
         @click="handleClick('increase')"
       >
-        <Icon name="increase"></Icon>
+        <s-icon name="increase"></s-icon>
       </div>
-    </Input>
+    </s-input>
   </div>
 </template>
 
 <script>
 export default {
-  name: "InputNumber",
+  name: "s-inputnumber",
   props: {
     value: {
       type: [Number, String],

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "Radio",
+  name: "s-radio",
   inject: {
     RadioGroup: {
       default: "",

@@ -5,14 +5,14 @@
     :disabled="disabled"
     @click="handleClick"
   >
-    <span v-if="icon"> <Icon></Icon></span>
+    <span v-if="icon"> <s-icon></s-icon></span>
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-  name: "Button",
+  name: "s-button",
   props: {
     type: {
       type: String,

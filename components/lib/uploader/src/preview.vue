@@ -1,19 +1,13 @@
 <template>
-  <div
-    class="preview-container"
-    :style="computedStyle"
-  >
+  <div class="preview-container" :style="computedStyle">
     <img
-    class="img-container"
+      class="img-container"
       :src="params.url"
       ref="previewImage"
       @load="loadImage"
       alt=""
-    >
-    <span
-      class="close-btn"
-      @click="handleClose"
-    >
+    />
+    <span class="close-btn" @click="handleClose">
       <Icon name="close"></Icon>
     </span>
   </div>
@@ -21,12 +15,13 @@
 
 <script>
 export default {
+  name: "s-preview",
   props: {
-    params: Object
+    params: Object,
   },
   data() {
     return {
-      computedStyle: null
+      computedStyle: null,
     };
   },
   methods: {
@@ -34,17 +29,16 @@ export default {
       if (this.$el.offsetHeight >= document.documentElement.clientHeight) {
         this.computedStyle = {
           height: document.documentElement.clientHeight - 100 + "px",
-          overflow: "auto"
+          overflow: "auto",
         };
       }
     },
     handleClose() {
       this.$emit("close");
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style >
-
 </style>
