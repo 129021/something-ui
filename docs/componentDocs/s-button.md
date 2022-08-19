@@ -2,17 +2,17 @@
 按钮组件
 
 ### 示例
- <Button type="primary"  ></Button>
-    <Button type="success"  ></Button>
-    <Button type="warning"  ></Button>
-    <Button type="danger"  ></Button>
+ <s-button type="primary"  ></s-button>
+    <s-button type="success"  ></s-button>
+    <s-button type="warning"  ></s-button>
+    <s-button type="danger"  ></s-button>
 
 ### 代码
 ```html
-    <Button type="primary"  ></Button>
-    <Button type="success"  ></Button>
-    <Button type="warning"  ></Button>
-    <Button type="danger"  ></Button>
+    <s-button type="primary"  ></s-button>
+    <s-button type="success"  ></s-button>
+    <s-button type="warning"  ></s-button>
+    <s-button type="danger"  ></s-button>
 ```
 
 ### Attributes

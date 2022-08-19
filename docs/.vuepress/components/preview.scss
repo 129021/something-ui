@@ -1,0 +1,16 @@
+.preview-container {
+    position: relative;
+
+    .img-container {
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}
