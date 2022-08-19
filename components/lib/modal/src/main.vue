@@ -4,16 +4,16 @@
       enter-active-class="animated fadeInDown"
       leave-active-class="animated fadeOutUp"
     >
+      <div class="modal-content" v-if="visible">
+        <TempComponent
+          @close="close"
+          :params="params"
+          @success="successCallback"
+          @fail="failCallback"
+        >
+        </TempComponent>
+      </div>
     </transition>
-    <div class="modal-content" v-if="visible">
-      <TempComponent
-        @close="close"
-        :params="params"
-        @success="successCallback"
-        @fail="failCallback"
-      >
-      </TempComponent>
-    </div>
   </div>
 </template>
 
@@ -72,6 +72,8 @@ export default {
   watch: {
     visible(newValue) {
       if (!newValue) {
+        console.log("动画结束了");
+        // this.$el.addEventListener("transitionend", this.destroyElement);
         this.$el.addEventListener("animationend", this.destoryElement, false);
       }
     },
@@ -80,5 +82,4 @@ export default {
 </script>
 
 <style >
-
 </style>

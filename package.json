@@ -36,6 +36,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "animate.css": "^3.7.2",
     "gulp": "^4.0.2",
     "gulp-minify-css": "^1.2.4",
     "gulp-sass": "^5.1.0",

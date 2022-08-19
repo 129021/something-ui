@@ -17,7 +17,7 @@
     </s-card>
     <s-button type="primary" disabled round icon="danger"></s-button>
     <s-button type="danger" round @click="handleClick"></s-button>
-    <s-button type="danger" >Hello</s-button>
+    <s-button type="danger">Hello</s-button>
 
     <s-icon name="info"></s-icon>
 
@@ -39,7 +39,12 @@
     <!-- <input clearable> -->
 
     <div class="input-warpper">
-      <s-inputnumber v-model="count" :step="1" :max="10" :min="1"></s-inputnumber>
+      <s-inputnumber
+        v-model="count"
+        :step="1"
+        :max="10"
+        :min="1"
+      ></s-inputnumber>
     </div>
 
     <s-radio v-model="sex" label="male"></s-radio>
@@ -95,7 +100,6 @@
       </div>
     </s-uploader>
 
-
     <s-button>hello</s-button>
   </div>
 </template>
@@ -139,8 +143,14 @@ export default {
       this.$alert({
         title: "我是标题",
         content: "我是内容",
-        onOK: () => {
+        onOk: () => {
           alert("OK");
+          // this.$message({
+          //   message: "ok",
+          //   duration: 1500,
+          //   position: "center",
+          //   type: "success",
+          // });
         },
         onCancel: () => {
           alert("cancel");

@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import 'animate.css'
+
 
 import '../components/css/demo.scss'
 import Demo from '../components/lib/demo/index.js'
