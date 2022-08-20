@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import "../assets/iconfont";
+// import "./js/iconfont";
 export default {
   name: "s-icon",
   props: {
@@ -13,6 +13,9 @@ export default {
       type: String,
       default: "",
     },
+  },
+  mounted () {
+    import('../components/js/iconfont').then(icon => {})
   },
   computed: {
     IconName() {
@@ -28,6 +31,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped lang="scss">
+@import './css/icon.scss'
 
 </style>

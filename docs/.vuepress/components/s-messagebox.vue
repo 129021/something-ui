@@ -1,17 +1,23 @@
+
 <template>
   <div class="mask">
     <transition name="message-fade">
       <div class="s-message-box" v-if="visible">
-        <div class="s-message-box__header">{{ title }}</div>
-        <div class="s-message-box__content">{{ content }}</div>
+        <div class="s-message-box__header">
+          {{ title }}
+        </div>
+        <div class="s-message-box__content">
+          {{ content }}
+        </div>
         <div class="s-message-box__footer">
           <template v-if="type === 'confirm'">
-            <s-button size="small" @click="cancelHandle">取消</s-button></template
+            <s-button size="small" @click="clickHandle('cancel')"
+              >取消</s-button
+            >
+          </template>
+          <s-button type="primary" size="small" @click="clickHandle('confirm')"
+            >确定</s-button
           >
-
-          <s-button type="primary" size="small" @click="confirmHandle">
-            确定
-          </s-button>
         </div>
       </div>
     </transition>
@@ -30,19 +36,18 @@ export default {
       type: String,
       default: "",
     },
+    onOk: Function,
+    onCancel: Function,
     type: {
       type: String,
       default: "confirm",
     },
-    onOK: Function,
-    onCancel: Function,
   },
   data() {
     return {
       visible: false,
     };
   },
-
   mounted() {
     this.createElement();
   },
@@ -51,16 +56,14 @@ export default {
       this.visible = true;
       document.body.appendChild(this.$el);
     },
-
-    cancelHandle() {
-      this.onCancel();
+    clickHandle(type) {
+      if (type === "cancel") {
+        this.onCancel();
+      } else {
+        this.onOk();
+      }
       this.close();
     },
-    confirmHandle() {
-      this.onOK();
-      this.close();
-    },
-
     close() {
       this.visible = false;
     },
@@ -68,11 +71,9 @@ export default {
       this.$destroy();
     },
   },
-
-  deforeDestory() {
+  beforeDestroy() {
     this.$el.parentNode.removeChild(this.$el);
   },
-
   watch: {
     visible(newValue) {
       if (!newValue) {
@@ -83,6 +84,8 @@ export default {
 };
 </script>
 
-<style >
 
+
+<style lang="scss" scoped>
+@import './css/message-box.scss';
 </style>

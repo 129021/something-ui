@@ -1,7 +1,15 @@
 <template>
-  <button class="s-button" :class="styleClass" :disabled="disabled" @click="handleClick">
-    <span v-if="icon"> <s-icon></s-icon></span>
-    Button
+  <button
+    class="s-button"
+    :class="styleClass"
+    :disabled="disabled"
+    @click="handleClick"
+  >
+    <span v-if="icon"> 
+    <s-icon :name="icon"></s-icon>
+    </span>
+    
+    <slot></slot>
   </button>
 </template>
 
@@ -13,7 +21,7 @@ export default {
       type: String,
       default: "",
       validator: (value) => {
-        return ["primary", "success", "warning", "danger"].includes(value);
+        return ["", "primary", "success", "warning", "danger"].includes(value);
       },
     },
     disabled: {
@@ -39,14 +47,14 @@ export default {
     },
   },
 
-  methods:{
-    handleClick(){
-        this.$emit("click")
-    }
-  }
+  methods: {
+    handleClick() {
+      this.$emit("click");
+    },
+  },
 };
 </script>   
 
-<style>
-@import "./s-button.scss";
+<style scoped lang="scss">
+@import './css/s-button.scss'
 </style>

@@ -79,6 +79,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped lang="scss" >
+@import './css/modal.scss'
 
 </style>

@@ -55,6 +55,6 @@ export default {
 };
 </script>
 
-<style >
-
+<style scoped lang="scss">
+@import "./css/radio.scss";
 </style>

@@ -46,6 +46,7 @@ export default {
       },
     },
   },
+  
   data() {
     return {
       visible: false,
@@ -135,6 +136,6 @@ export default {
 };
 </script>
 
-<style >
-
+<style scoped lang="scss" >
+@import './css/message.scss';
 </style>

@@ -1,6 +1,11 @@
 <template>
   <div class="input-number-inner">
-    <s-input v-model="inputValue" center @change="handleChange">
+    <s-input
+      v-model="inputValue"
+      :disabled="disabled"
+      center
+      @change="handleChange"
+    >
       <div
         class="cursor-pointer"
         :class="{ 'is-disabled': decreaseDisabled }"
@@ -28,6 +33,10 @@ export default {
     value: {
       type: [Number, String],
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     step: {
       type: Number,
       default: 1,
@@ -42,6 +51,13 @@ export default {
     },
     precision: {
       type: Number,
+    },
+    size: {
+      type: String,
+      default: "",
+      validator: (value) => {
+        return ["", "medium", "small"].includes(value);
+      },
     },
   },
   data() {
@@ -111,5 +127,4 @@ export default {
 </script>
 
 <style >
-
 </style>

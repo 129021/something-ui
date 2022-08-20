@@ -1,22 +1,16 @@
-# 快速开始
-#### 安装组件库
-
-
-```bash
-npm i something-ui
-```
-
-#### 引用组件库
-> 在main.js中引用组件库
-
-```javascript
-//全部引用
-import 'something-ui/dist/css/index.css';
-import SUI from 'something-ui';
-Vue.use(SUI);
-
-按需引用
-import 'mooc-ui/dist/css/demo.css';
-import { Demo } from 'something-ui';
-Vue.use(Demo);
-```
+---
+home: true
+# heroImage: /hero.png
+heroText: something-ui
+tagline: 一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库
+actionText: 快速上手 →
+actionLink: /guide/handson.md
+features:
+- title: 简洁至上
+  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+- title: Vue驱动
+  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+- title: 高性能
+  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+footer: MIT Licensed | Copyright © 2018-present Evan You
+---

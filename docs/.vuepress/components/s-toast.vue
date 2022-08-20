@@ -24,7 +24,7 @@ export default {
 
     duration: {
       type: Number,
-      default: 1500,
+      default: 3000,
     },
   },
   mounted() {
@@ -70,6 +70,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped lang="scss">
+@import './css/toast.scss'
 
 </style>
